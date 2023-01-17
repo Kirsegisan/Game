@@ -18,8 +18,8 @@ class Drwing:
 
     def fps(self, clock):
         display_fps = str(int(clock.get_fps()))
-        renger = self.font.render(display_fps, 0, red)
-        self.sc.blit(renger, fps_pos)
+        render = self.font.render(display_fps, False, red)
+        self.sc.blit(render, fps_pos)
 
     def mini_map(self, player):
         self.sc_map.fill(black)

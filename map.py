@@ -4,7 +4,7 @@ text_map = [
     'wwwwwwwwwwwwww',
     'w..w........ww',
     'w..w....w....w',
-    'w............w',
+    'w..w....w....w',
     'ww........wwww',
     'w....w.......w',
     'wwwwwwwwwwwwww'

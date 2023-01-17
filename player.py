@@ -2,6 +2,7 @@ from settings import *
 import pygame
 import math
 
+
 class Player:
     def __init__(self):
         self.x, self.y = player_pos
@@ -9,23 +10,24 @@ class Player:
 
     @property
     def pos(self):
-        return (self.x, self.y)
+        return self.x, self.y
 
-    def shift(self, nitro, nitro_voz):
+    @staticmethod
+    def shift(nitro, nitro_voz):
         nitro_zarad = nitro
         activat = nitro_voz
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_TAB] and activat and nitro_zarad >=500:
-            return(5, nitro_zarad - 5, False)
+        if keys[pygame.K_TAB] and activat and nitro_zarad >= 500:
+            return 5, nitro_zarad - 5, False
         if not activat:
             if nitro_zarad <= 0:
-                return(1, 0, True)
-            return (5, nitro_zarad - 5, False)
+                return 1, 0, True
+            return 5, nitro_zarad - 5, False
 
         if nitro_zarad < 1000:
-            return(1, nitro_zarad + 2, activat)
+            return 1, nitro_zarad + 2, activat
         if nitro_zarad >= 1000:
-            return (1, 1000, activat)
+            return 1, 1000, activat
 
     def movement(self, player_speed):
         keys = pygame.key.get_pressed()
@@ -70,4 +72,3 @@ class Player:
                 jump = jump_0
                 anti_fly = True
         return (jump, anti_fly)
-
